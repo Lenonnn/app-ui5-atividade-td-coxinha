@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "AppCoxinha.AppCoxinha.AppCoxinha",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#AppCoxinha-Display",
+        "navigationComponentName": "AppCoxinha.AppCoxinha",
+        "intentSemanticObject": "AppCoxinha",
+        "intentAction": "Display",
+        "html5ApplicationName": "appcoxinha",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "110b5ee8-720c-4250-ba91-aebdebddd36a"
+        ],
+        "contentPackages": [
+            "644f160b-ce00-4f0c-892a-ee830f5a0ce9"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "searchKeywords": "Title,Subtitle",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

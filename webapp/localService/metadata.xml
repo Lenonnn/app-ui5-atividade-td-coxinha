@@ -1,0 +1,31 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZGETCOXINHA07_V02_SRV" xml:lang="pt" sap:schema-version="1">
+			<EntityType Name="GetHeaders" sap:content-version="1">
+				<Key><PropertyRef Name="IdPed"/></Key><Property Name="IdPed" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID_PEDIDO" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IdCli" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Código do cliente"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Comentário" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="GetItensSet" Relationship="ZGETCOXINHA07_V02_SRV.HeaderToItem" FromRole="FromRole_HeaderToItem"
+					ToRole="ToRole_HeaderToItem"/></EntityType>
+			<EntityType Name="GetItens" sap:content-version="1">
+				<Key><PropertyRef Name="IdPed"/></Key><Property Name="IdPed" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID_PEDIDO" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IdPro" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Código do cliente"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nome do cliente"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Valor" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Preço Prod."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Preco" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Mont."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="HeaderToItem" sap:content-version="1"><End Type="ZGETCOXINHA07_V02_SRV.GetHeaders" Multiplicity="1" Role="FromRole_HeaderToItem"/><End Type="ZGETCOXINHA07_V02_SRV.GetItens" Multiplicity="*" Role="ToRole_HeaderToItem"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_HeaderToItem"><PropertyRef Name="IdPed"/></Principal>
+					<Dependent Role="ToRole_HeaderToItem"><PropertyRef Name="IdPed"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZGETCOXINHA07_V02_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="GetHeadersSet" EntityType="ZGETCOXINHA07_V02_SRV.GetHeaders" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetItensSet" EntityType="ZGETCOXINHA07_V02_SRV.GetItens" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="HeaderToItemSet" Association="ZGETCOXINHA07_V02_SRV.HeaderToItem" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="GetHeadersSet" Role="FromRole_HeaderToItem"/><End EntitySet="GetItensSet" Role="ToRole_HeaderToItem"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZGETCOXINHA07_V02_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZGETCOXINHA07_V02_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
